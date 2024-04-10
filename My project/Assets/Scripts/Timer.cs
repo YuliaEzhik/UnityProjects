@@ -5,6 +5,8 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    public float totalTime = 60f;
+    private float timeLeft;
     private int sec = 0;
     private int min = 0;
     private TMP_Text _TimerText;
@@ -14,6 +16,7 @@ public class Timer : MonoBehaviour
     {
         _TimerText = GameObject.Find("TimerText").GetComponent<TMP_Text>();
         StartCoroutine(ITimer());
+        timeLeft = totalTime;
     }
 
     IEnumerator ITimer()
